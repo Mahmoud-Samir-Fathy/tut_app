@@ -7,6 +7,7 @@ class ColorManager{
   static Color textColor=const Color(0xff9E9E9E);
   static Color borderColor=const Color(0xff304654);
   static Color navIconsColor=const Color(0xff858585);
+  static Color hintColor=const Color(0xff737477);
   static Color grey1=const Color(0xff707070);
   static Color grey2=const Color(0xff797979);
   static Color darkPrimary = const Color(0xffd17d11);
