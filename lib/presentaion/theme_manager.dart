@@ -42,9 +42,7 @@ ThemeData getApplicationTheme() {
         buttonColor: ColorManager.primaryColor,
         splashColor: ColorManager.lightPrimary,
       ),
-
       //text Theme
-
       textTheme: TextTheme(
           headlineLarge: getSemiBoldStyle(
               fontSize: FontSize.s16, color: ColorManager.titleColor),
@@ -52,14 +50,8 @@ ThemeData getApplicationTheme() {
               fontSize: FontSize.s14, color: ColorManager.titleColor),
           displayMedium: getMediumStyle(
               fontSize: FontSize.s16, color: ColorManager.primaryColor),
-          displaySmall: getRegularStyle(
-              fontSize: FontSize.s14, color: ColorManager.hintColor),
-          displayLarge: getRegularStyle(
-              fontSize: FontSize.s17, color: ColorManager.whiteColor),
           bodyMedium: getRegularStyle(
               fontSize: FontSize.s12, color: ColorManager.primaryColor),
-          bodySmall: getRegularStyle(
-              fontSize: FontSize.s11, color: ColorManager.hintColor),
           labelMedium: getSemiBoldStyle(
               fontSize: FontSize.s16, color: ColorManager.whiteColor),
           labelLarge: getSemiBoldStyle(
@@ -71,6 +63,27 @@ ThemeData getApplicationTheme() {
           titleSmall: getRegularStyle(fontSize: FontSize.s12, color: ColorManager.grey2)
       ),
       //input decoration Theme(Text formField Theme)
+    inputDecorationTheme: InputDecorationTheme(
+      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color:ColorManager.primaryColor,width: AppSizes.s1 ),
+        borderRadius: BorderRadius.circular(AppSizes.s14,)
+      ),
+      disabledBorder:OutlineInputBorder(borderSide: BorderSide(color:ColorManager.borderColor,width: AppSizes.s1 ),
+          borderRadius: BorderRadius.circular(AppSizes.s14,)
+      ) ,
+      errorBorder:OutlineInputBorder(borderSide: BorderSide(color:ColorManager.redColor,width: AppSizes.s1 ),
+          borderRadius: BorderRadius.circular(AppSizes.s14,)
+      ),
+      focusedBorder:OutlineInputBorder(borderSide: BorderSide(color:ColorManager.primaryColor,width: AppSizes.s1 ),
+          borderRadius: BorderRadius.circular(AppSizes.s14,)
+      ) ,
+      focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color:ColorManager.primaryColor,width: AppSizes.s1 ),
+          borderRadius: BorderRadius.circular(AppSizes.s14,)
+      ),
+      hintStyle:getRegularStyle(fontSize: FontSize.s14, color: ColorManager.hintColor) ,
+      labelStyle:getSemiBoldStyle(fontSize: FontSize.s14, color: ColorManager.hintColor)  ,
+      errorStyle:getSemiBoldStyle(fontSize: FontSize.s14, color: ColorManager.redColor)   ,
+      contentPadding: const EdgeInsets.all(AppSizes.s8),
+    )
       //Navigation Theme
       );
 }

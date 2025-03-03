@@ -12,5 +12,6 @@ class ColorManager{
   static Color grey2=const Color(0xff797979);
   static Color darkPrimary = const Color(0xffd17d11);
   static Color lightPrimary = const Color(0xccd17d11);
+  static Color redColor = const Color(0xffFF0000);
 
 }
