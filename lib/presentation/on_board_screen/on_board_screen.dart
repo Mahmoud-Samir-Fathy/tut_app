@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tut_app/presentation/resources/assets_manager.dart';
 import 'package:tut_app/presentation/resources/color_manager.dart';
+import 'package:tut_app/presentation/resources/constant_manager.dart';
+import 'package:tut_app/presentation/resources/routes_manager.dart';
 import 'package:tut_app/presentation/resources/string_manager.dart';
 import 'package:tut_app/presentation/resources/values_manager.dart';
 
@@ -52,7 +54,6 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
           }),
       bottomSheet: Container(
         height: AppSizes.s100,
-
         color: ColorManager.whiteColor,
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -61,53 +62,67 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
               children: [
                 const Spacer(),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(
+                          context, Routes.loginScreen);
+                    },
                     child: Text(
                       AppStrings.skip,
                       style: Theme.of(context).textTheme.displayMedium,
                     )),
               ],
             ),
-            const SizedBox(height: AppSizes.s10),
+            const SizedBox(height: AppSizes.s4),
             Container(
               color: ColorManager.primaryColor,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(AppPadding.p10),
-                    child: SizedBox(
-                      height: AppSizes.s20,
-                      width: AppSizes.s20,
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: SvgPicture.asset(AssetsManager.leftArrowIc),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(AppPadding.p12),
+                      child: SizedBox(
+                        height: AppSizes.s20,
+                        width: AppSizes.s20,
+                        child: GestureDetector(
+                          onTap: () {
+                            _controller.animateToPage(previousIndex(),
+                                duration: const Duration(
+                                    milliseconds: ConstantManager.pageViewDelay),
+                                curve: Curves.bounceInOut);
+                          },
+                          child: SvgPicture.asset(AssetsManager.leftArrowIc),
+                        ),
                       ),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      for (int i = 0; i < _list.length; i++)
-                        Padding(
-                          padding: const EdgeInsets.all(AppPadding.p8),
-                          child: _getSelectedIcon(i),
-                        )
-                    ],
-                  ),
-
-
-                  Padding(
-                    padding: const EdgeInsets.all(AppPadding.p8),
-                    child: SizedBox(
-                      height: AppSizes.s20,
-                      width: AppSizes.s20,
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: SvgPicture.asset(AssetsManager.rightArrowIc),
-                      ),
+                    Row(
+                      children: [
+                        for (int i = 0; i < _list.length; i++)
+                          Padding(
+                            padding: const EdgeInsets.all(AppPadding.p8),
+                            child: _getSelectedIcon(i),
+                          )
+                      ],
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(AppPadding.p8),
+                      child: SizedBox(
+                        height: AppSizes.s20,
+                        width: AppSizes.s20,
+                        child: GestureDetector(
+                          onTap: () {
+                            _controller.animateToPage(nextIndex(),
+                                duration: const Duration(
+                                    milliseconds: ConstantManager.pageViewDelay),
+                                curve: Curves.bounceInOut);
+                          },
+                          child: SvgPicture.asset(AssetsManager.rightArrowIc),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],
@@ -115,10 +130,27 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
       ),
     );
   }
-  Widget _getSelectedIcon(int index){
-    if (index==currentIndex){
+
+  int previousIndex() {
+    int previousNumber = --currentIndex;
+    if (previousNumber == -1) {
+      previousNumber = _list.length - 1;
+    }
+    return previousNumber;
+  }
+
+  int nextIndex() {
+    int nextNumber = ++currentIndex;
+    if (nextNumber == _list.length) {
+      nextNumber = 0;
+    }
+    return nextNumber;
+  }
+
+  Widget _getSelectedIcon(int index) {
+    if (index == currentIndex) {
       return SvgPicture.asset(AssetsManager.hollowCircleIc);
-    }else {
+    } else {
       return SvgPicture.asset(AssetsManager.solidCircleIc);
     }
   }
