@@ -1,0 +1,18 @@
+<svg width="15.000000" height="19.000000" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs/>
+	<rect id="Group 2845" width="15.000000" height="19.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g style="mix-blend-mode:normal">
+		<mask id="mask_1_51" fill="white">
+			<path id="chevron" d="M3.68628 9.35315L9.34326 3.69629L7.92896 2.2821L2.27222 7.93896L0.85791 9.35315L2.27222 10.7673L7.92896 16.4243L9.34326 15.0101L3.68628 9.35315Z" clip-rule="evenodd" fill="" fill-opacity="1.000000" fill-rule="evenodd"/>
+		</mask>
+		<path id="chevron" d="M3.68628 9.35315L9.34326 3.69629L7.92896 2.2821L2.27222 7.93896L0.85791 9.35315L2.27222 10.7673L7.92896 16.4243L9.34326 15.0101L3.68628 9.35315Z" clip-rule="evenodd" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd" mask="url(#mask_1_51)"/>
+		<path id="chevron" d="" clip-rule="evenodd" fill="#979797" fill-opacity="0.000000" fill-rule="evenodd"/>
+	</g>
+	<g style="mix-blend-mode:normal">
+		<rect id="Rectangle 1847" width="15.000000" height="19.000000" fill="#FFFFFF" fill-opacity="0"/>
+		<rect id="Rectangle 1847" x="0.500000" y="0.500000" width="14.000000" height="18.000000" stroke="#707070" stroke-opacity="0" stroke-width="1.000000"/>
+	</g>
+</svg>
