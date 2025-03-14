@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tut_app/presentation/forget_password_screen/forget_password_screen.dart';
 import 'package:tut_app/presentation/login_screen/login_screen.dart';
 import 'package:tut_app/presentation/main_screen/main_screen.dart';
-import 'package:tut_app/presentation/on_board_screen/on_board_screen.dart';
+import 'package:tut_app/presentation/on_board_screen/on_boarding_view/on_board_screen.dart';
 import 'package:tut_app/presentation/register_screen/register_screen.dart';
 import 'package:tut_app/presentation/resources/string_manager.dart';
 import 'package:tut_app/presentation/splash_screen/splash_screen.dart';
